@@ -15,16 +15,32 @@
 # - validation
 # - visualization
 authors:
-  - name: <author name as 'First M. Last'>
-    orcid: 0000-0000-0000-0000
+  - name: Sunanda Sharma
+    orcid: 0000-0001-8822-7960
     roles:
       - conceptualization
       - formal analysis
       - investigation
       - methodology
       - software
-  - name: <author name as 'First M. Last'>
-    orcid: 0000-0000-0000-0000
+      - project administration
+  - name: Ryan Lane
+    orcid:
+    roles:
+      - validation
+      - critical feedback
+  - name: Tara Essock-Burns
+      orcid:
     roles:
       - data curation
-      - validation
+  - name: Ilya Kolb
+    orcid:
+    roles:
+      - critcal feedback
+      - editing
+  - name: Dave Mets
+    orcid:
+    roles:
+      - critical feedback
+      - supervision
+      - editing

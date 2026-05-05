@@ -6,6 +6,7 @@ project:
   - 'examples/*.ipynb'
   - 'pages/*.qmd'
   resources:
+  - assets/*
   - authors.yml
   - CITATION.cff
 execute:
@@ -73,7 +74,7 @@ filters:
 - _extensions/filter-warnings/filter-warnings.lua
 comments:
   giscus:
-    repo: Arcadia-Science/notebook-pub-template
+    repo: Arcadia-Science/2026-raman-mapping-algae
     input-position: top
 reference-location: margin
 bibliography: ref.bib
