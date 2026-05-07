@@ -3,7 +3,6 @@ project:
   render:
   - '*.qmd'
   - '*.ipynb'
-  - 'examples/*.ipynb'
   - 'pages/*.qmd'
   resources:
   - assets/*
@@ -26,8 +25,6 @@ website:
         href: index.ipynb
     - text: '{{< iconify nrk:back >}} Back to Pub'
       href: index.ipynb
-    - text: Demo
-      href: /examples/demo.html
     right:
     - text: FAQ
       href: pages/FAQ.qmd
@@ -81,4 +78,4 @@ bibliography: ref.bib
 csl: "_extensions/Arcadia-Science/arcadia-pub-theme/assets/arcadia.csl"
 code-annotations: hover
 html-table-processing: none
-demo-title: A brief syntax demo
+demo-title: ""

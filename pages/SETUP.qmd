@@ -57,7 +57,7 @@ make execute
 
 (Make sure you're in the conda environment you created above)
 
-This will execute and render the notebook `index.ipynb`, then build the publication site. To preview the site, use
+This will execute and render the notebook `index.ipynb`, then build the publication site. The first execution will take a few minutes since the `_freeze/` cache is not included in the repository; subsequent renders will be much faster as Quarto reuses the cache. To preview the site, use
 
 ```bash
 make preview
