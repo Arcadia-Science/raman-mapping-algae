@@ -176,8 +176,10 @@ cython_debug/
 /.quarto/
 /_site/
 /*_files/
+/_freeze/
 
 **/*.quarto_ipynb
 
 # assets
 /assets/
+_freeze/index/execute-results/html.json
