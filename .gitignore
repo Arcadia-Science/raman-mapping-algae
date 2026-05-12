@@ -180,6 +180,5 @@ cython_debug/
 
 **/*.quarto_ipynb
 
-# assets
-/assets/
-_freeze/index/execute-results/html.json
+# Auto-generated figure exports from notebook execution
+/assets/*.pdf

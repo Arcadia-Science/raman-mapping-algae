@@ -69,6 +69,18 @@ This will open a local instance of the publication in your default browser.
 
 To modify or extend any analyses, open up `index.ipynb` with Jupyter or your favorite IDE. To preview changes as you modify the notebook, run `make preview` again and leave the command running. As you make changes to the notebook, the preview site will automatically reload.
 
+## Data files
+
+The `data/` directory contains the following files, each tied to specific sections and figures of the publication:
+
+| File | Used for |
+|---|---|
+| `UV-Vis 5_1_2025 7_19_21 PM.tsv` | UV-Vis absorbance figure of pigment standards (introductory pigment characterization) |
+| `Cells- 473nm-Map-ForPeng 1.txt` | All 473 nm Raman analysis: spectra, intensity masking, baseline correction, univariate maps, PCA, NMF |
+| `Cells- 532nm-Map-ForPeng 1.txt` | All 532 nm Raman analysis: spectra, intensity masking, baseline correction, univariate maps |
+| `2024-11-12_CC-1373_TAP_slide_10_singlecellmap.txt` | All 785 nm Raman analysis: spectra, intensity masking, baseline correction, univariate maps |
+| `2024-11-12_TAP_slide_single.txt` | 785 nm background spectrum used to subtract glass + medium fluorescence |
+
 ## Publish
 
 If you've improved the publication, consider contributing so we can update the hosted publication with your edits (big or small!). To get started, see our [contributing guide](CONTRIBUTING.qmd).
