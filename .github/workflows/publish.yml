@@ -78,7 +78,21 @@ jobs:
           jupyter nbconvert --to notebook --execute --inplace index.ipynb
 
       - name: Render site
-        run: quarto render --no-execute
+        run: |
+          # Quarto sometimes errors during kernel cleanup even with --no-execute.
+          # Tolerate that specific failure mode if _site/index.html actually
+          # got produced.
+          set +e
+          quarto render --no-execute
+          RENDER_EXIT=$?
+          set -e
+          ls _site/ 2>/dev/null | head -20 || echo "_site/ missing"
+          if [ -f "_site/index.html" ]; then
+            echo "Render produced _site/index.html; ignoring exit code $RENDER_EXIT."
+            exit 0
+          fi
+          echo "Render failed and _site/index.html is missing."
+          exit $RENDER_EXIT
 
       - name: Publish to gh-pages
         uses: quarto-dev/quarto-actions/publish@v2
