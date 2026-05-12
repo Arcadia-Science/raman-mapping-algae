@@ -12,6 +12,11 @@ on:
 
 name: Quarto Publish
 
+# Use a login shell so the conda env activation persists across run steps.
+defaults:
+  run:
+    shell: bash -l {0}
+
 jobs:
   publish:
     # Run when the workflow is manually triggered or when a PR is merged.
@@ -44,6 +49,17 @@ jobs:
             git push origin gh-pages
             git checkout publish
           fi
+
+      # Set up the conda environment defined in env.yml so that Quarto can
+      # execute the notebook on the runner (no _freeze cache committed).
+      - name: Set up Miniconda + env from env.yml
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          environment-file: env.yml
+          activate-environment: 2026-raman-mapping-algae
+          auto-update-conda: false
+          use-mamba: true
+          channels: conda-forge
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
