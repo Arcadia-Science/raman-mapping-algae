@@ -176,9 +176,11 @@ cython_debug/
 /.quarto/
 /_site/
 /*_files/
-/_freeze/
 
 **/*.quarto_ipynb
 
 # Auto-generated figure exports from notebook execution
 /assets/*.pdf
+
+# Backup interactive Plotly maps - saved locally only
+/assets/*_interactive_spectralmap.html
