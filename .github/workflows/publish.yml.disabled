@@ -67,32 +67,21 @@ jobs:
       # Render the site in a run step so the conda env activation (from
       # setup-miniconda) is active. The publish action below doesn't inherit
       # shell defaults, so we render first and then just upload the output.
-      # Execute the notebook with nbconvert directly (handles kernel cleanup
-       # better than Quarto's own execution), then render via Quarto with
-       # --no-execute so it just reads the already-populated cell outputs.
-      - name: Execute notebook
+      # Render with Quarto's own execute path. Quarto sometimes errors during
+      # kernel cleanup after a successful render of long notebooks. We allow
+      # this step to fail and check the output afterwards.
+      - name: Render site
+        continue-on-error: true
         run: |
           conda info
           which python
           python --version
-          jupyter nbconvert --to notebook --execute --inplace index.ipynb
+          quarto render --execute
 
-      - name: Render site
+      - name: Verify render output
         run: |
-          # Quarto sometimes errors during kernel cleanup even with --no-execute.
-          # Tolerate that specific failure mode if _site/index.html actually
-          # got produced.
-          set +e
-          quarto render --no-execute
-          RENDER_EXIT=$?
-          set -e
-          ls _site/ 2>/dev/null | head -20 || echo "_site/ missing"
-          if [ -f "_site/index.html" ]; then
-            echo "Render produced _site/index.html; ignoring exit code $RENDER_EXIT."
-            exit 0
-          fi
-          echo "Render failed and _site/index.html is missing."
-          exit $RENDER_EXIT
+          ls -la _site/ 2>/dev/null | head -20 || echo "_site/ missing"
+          test -f _site/index.html
 
       - name: Publish to gh-pages
         uses: quarto-dev/quarto-actions/publish@v2
