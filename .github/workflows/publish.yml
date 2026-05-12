@@ -64,9 +64,20 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Render and Publish
+      # Render the site in a run step so the conda env activation (from
+      # setup-miniconda) is active. The publish action below doesn't inherit
+      # shell defaults, so we render first and then just upload the output.
+      - name: Render site
+        run: |
+          conda info
+          which python
+          python --version
+          quarto render
+
+      - name: Publish to gh-pages
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          render: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
