@@ -184,3 +184,6 @@ cython_debug/
 
 # Backup interactive Plotly maps - saved locally only
 /assets/*_interactive_spectralmap.html
+
+# Local deployment notes - not shipped with the pub
+/DEPLOY.md
