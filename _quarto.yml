@@ -21,7 +21,7 @@ website:
     left:
     - text: '{{< iconify qlementine-icons:version-control-16 >}}'
       menu:
-      - text: v01 (latest)
+      - text: v1.0.0 (latest)
         href: index.ipynb
     - text: '{{< iconify nrk:back >}} Back to Pub'
       href: index.ipynb
