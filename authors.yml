@@ -1,21 +1,21 @@
 authors:
-  - name: Sunanda Sharma
-    orcid: 0000-0001-8822-7960
-    roles:
-      - conceptualization
-      - formal analysis
-      - investigation
-      - methodology
-      - software
-      - project administration
-  - name: Tara Essock-Burns
-    orcid: 0000-0003-4159-6974
-    roles:
-      - conceptualization
-      - resources
-  - name: David G. Mets
-    orcid: 0000-0002-0803-0912
-    roles:
-      - critical feedback
-      - supervision
-      - editing
+- name: Tara Essock-Burns
+  orcid: 0000-0003-4159-6974
+  roles:
+  - Resources
+- name: David G. Mets
+  orcid: 0000-0002-0803-0912
+  roles:
+  - Editing
+  - Supervision
+- name: Sunanda Sharma
+  orcid: 0000-0001-8822-7960
+  roles:
+  - Conceptualization
+  - Formal analysis
+  - Investigation
+  - Methodology
+  - Project administration
+  - Software
+  - Visualization
+  - Writing
