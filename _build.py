@@ -70,9 +70,17 @@ def copy_notebook(tag: str, dry_run: bool) -> None:
 
 
 def copy_freeze_directory(tag: str, dry_run: bool) -> None:
-    """Copy the `_freeze/index` directory for a given tag to a versioned directory."""
+    """Copy the `_freeze/index` directory for a given tag to a versioned directory.
+
+    Local patch: this pub uses embedded notebook outputs rather than a committed
+    `_freeze/` cache, so the source directory may not exist. Skip when missing.
+    """
     src = Path("_freeze/index")
     dst = get_versioned_freeze_directory_path(tag)
+
+    if not src.exists():
+        print(f"Skipping freeze copy: '{src}' does not exist at this tag.")
+        return
 
     if dry_run:
         print(f"Would copy '{src}' to '{dst}'")
@@ -100,8 +108,13 @@ def update_index_notebook_and_freeze_directory(tag: str, dry_run: bool) -> None:
     notebook_dst.unlink()
     notebook_src.replace(notebook_dst)
 
-    shutil.rmtree(freeze_dst, ignore_errors=True)
-    freeze_src.replace(freeze_dst)
+    # Local patch: skip freeze rename when the versioned source doesn't exist
+    # (this pub uses embedded notebook outputs instead of a committed `_freeze/` cache).
+    if freeze_src.exists():
+        shutil.rmtree(freeze_dst, ignore_errors=True)
+        freeze_src.replace(freeze_dst)
+    else:
+        print(f"Skipping freeze rename: '{freeze_src}' does not exist.")
 
 
 def update_quarto_yaml(most_recent_tag: str, previous_tags: list[str], dry_run: bool) -> None:
