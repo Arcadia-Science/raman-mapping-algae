@@ -2,7 +2,7 @@
 
 This code repository contains all materials required for creating and hosting the publication entitled, *"Multi-wavelength Raman mapping of unicellular algae"*.
 
-The publication is hosted at [this URL](https://doi.org/10.57844/arcadia-qcgh-g28u).
+The publication is hosted at [this URL](https://arcadia-science.github.io/raman-mapping-algae/).
 
 ## Data Description
 
