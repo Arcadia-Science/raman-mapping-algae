@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Multi-wavelength Raman mapping of unicellular algae –",
     "section": "",
-    "text": "We spatially and spectrally mapped live cells of Chlamydomonas reinhardtii and Chlamydomonas smithii at three excitation wavelengths (473, 532, and 785 nm) using two commercial confocal spontaneous Raman systems. Here, we share the analysis notebook used to load, mask, baseline-correct, and decompose the resulting spectral maps. All three datasets captured carotenoid signal, with the 473 nm dataset resolving the most peaks overall and giving the clearest spatial information, due to resonance enhancement, scattering efficiency, and optimized focus. PCA on both unmasked and masked data recovered localized structures consistent with the chloroplast and a smaller eyespot-like feature, while NMF picked up chloroplast-like components. These organelle assignments are tentative."
+    "text": "NoteAI usage disclosure\n\n\n\n\n\nWe used Claude (Opus 4.7) to help write, clean up, and comment our code, to review our code and selectively incorporate its feedback, to suggest wording ideas from which we chose small phrases or sentence structure ideas to use, and to help clarify and streamline text that we wrote."
   },
   {
     "objectID": "index.html#purpose",
     "href": "index.html#purpose",
     "title": "Multi-wavelength Raman mapping of unicellular algae –",
-    "section": "",
-    "text": "We spatially and spectrally mapped live cells of Chlamydomonas reinhardtii and Chlamydomonas smithii at three excitation wavelengths (473, 532, and 785 nm) using two commercial confocal spontaneous Raman systems. Here, we share the analysis notebook used to load, mask, baseline-correct, and decompose the resulting spectral maps. All three datasets captured carotenoid signal, with the 473 nm dataset resolving the most peaks overall and giving the clearest spatial information, due to resonance enhancement, scattering efficiency, and optimized focus. PCA on both unmasked and masked data recovered localized structures consistent with the chloroplast and a smaller eyespot-like feature, while NMF picked up chloroplast-like components. These organelle assignments are tentative."
+    "section": "Purpose",
+    "text": "Purpose\nWe spatially and spectrally mapped live cells of Chlamydomonas reinhardtii and Chlamydomonas smithii at three excitation wavelengths (473, 532, and 785 nm) using two commercial confocal spontaneous Raman systems. Here, we share the analysis notebook used to load, mask, baseline-correct, and decompose the resulting spectral maps. All three datasets captured carotenoid signal, with the 473 nm dataset resolving the most peaks overall and giving the clearest spatial information, due to resonance enhancement, scattering efficiency, and optimized focus. PCA on both unmasked and masked data recovered localized structures consistent with the chloroplast and a smaller eyespot-like feature, while NMF picked up chloroplast-like components. These organelle assignments are tentative."
   },
   {
     "objectID": "index.html#introduction",
